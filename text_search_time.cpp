@@ -14,8 +14,7 @@ const int metodo2 = 3;
 using namespace std;
 
 double tiempos_busquedas(int b, string t, string p){
-	// Mide el tiempo en segundos que tarda la función de búsqueda b en 
-	// buscar el elemento x en el arreglo de la estructura ma
+	// Mide el tiempo en segundos que tarda la función de búsqueda
 	if(b == bruteforce){
 		clock_t start = clock();
 		text_search_bruteforce(t,p);

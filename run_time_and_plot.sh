@@ -1,8 +1,8 @@
 #!/bin/bash
 
-FECHA=$(date '+%A %d-%B, %Y - %T')
-echo $FECHA > $ARCHIVO_SALIDA
-PREF="miarray_time_"
+
+echo $FECHA
+PREF="pattermatching_time_"
 PRED="data_"
 
 make
