@@ -6,7 +6,9 @@ using namespace std;
 
 bool bruteforce_verificador(string t, string p, int x){
 	// Retorna falso si el patrón p no está en t desde la posicón x
-
+	for(int i = 0; i < p.length(); i++){
+		if(t[x+i] != p[i])	return false;
+	}
 	return true;
 }
 
@@ -17,7 +19,7 @@ int* text_search_bruteforce(string t, string p){
 	int* c = (int *) malloc(sizeof(int) * (max_coin + 1));
 	c[0] = 0;
 	for(int i = 0; i< max_coin; i++){
-		if(t.at(i) == p.at(0)){
+		if(bruteforce_verificador(t, p, i)){
 			c[0]++;
 			c[c[0]] = i;
 		}
