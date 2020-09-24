@@ -3,13 +3,13 @@
 
 using namespace std;
 
-bool bruteforce_verificador(string t, string p, int x){
+bool bruteforce_verificador(string &t, string &p, int x){
 	// Retorna falso si el patrón p no está en t desde la posicón x
 
 	return true;
 }
 
-int* text_search_bruteforce(string t, string p){
+int* text_search_bruteforce(string &t, string &p){
 	// Mayor cantidad de coincidencias posibles según el tamaño de los strings
 	int max_coin = t.length() - p.length() + 1;
 	// Se reserva la cantidad de elementos + el contador que va a inicio.SEguroa
@@ -29,7 +29,7 @@ int* text_search_bruteforce(string t, string p){
 	return c;
 }
 
-int* text_search_metodo1(string t, string p){
+int* text_search_metodo1(string &t, string &p){
 	int* c = (int *) malloc(sizeof(int));
 	c[0] = 0;
 
@@ -37,7 +37,7 @@ int* text_search_metodo1(string t, string p){
 }
 
 /* Implementación Rabin-Karp */
-int* text_search_metodo2(string t, string p){
+int* text_search_metodo2(string &t, string &p){
 	int n = t.length();
 	int m = p.length();
 	int q = 101;	// Número primo 
