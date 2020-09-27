@@ -67,6 +67,6 @@ int main(int argc, char *argv[]){
 	t_metodo1 *= 1000000/cPatrones;
 	t_metodo2 *= 1000000/cPatrones;
 	
-	printf("%ld\t%d\t%f\t%f\t%f\n", texto.length(), largoPatrones, t_bruteforce, t_metodo1, t_metodo2);
+	printf("%ld\t%d\t%.2f\t%.2f\t%.2f\n", texto.length(), largoPatrones, t_bruteforce, t_metodo1, t_metodo2);
 	return 0;
 }

@@ -102,7 +102,11 @@ int* text_search_metodo2(string &t, string &p){
 		ph = (d*ph + p.at(i))%q;
 		th = (d*th + t.at(i))%q;
 	}
-	int* c = (int *) malloc(sizeof(int));
+	int* c = (int *) malloc(sizeof(int)*(n-m-1));
+	if(c == NULL){
+		printf("Error! en la reserva de memoria de método Rabin-Karp.\n");
+		return NULL;
+	}
 	c[0] = 0;
 	int aux;
 	for(int i = 0; i <= n-m; i++){

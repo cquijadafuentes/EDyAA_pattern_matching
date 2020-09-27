@@ -20,29 +20,40 @@ set style line 1 linecolor rgb "blue" dashtype 8 linewidth 1.5 pointtype 6 point
 
 set xtics 100
 set xrange [50:1050]
-
 set xlabel "Tamaño del patrón (m)" font ",18"
-set output 'data_dna_m.png'
-plot 'data_dna_m' u 2:4 w lp t 'SuffixArray' ls 1, '' u 2:5 w lp t 'BruteForce' ls 2
+
+set output 'data_dna_n_no.png'
+plot 'data_dna_n_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_n_yes.png'
+plot 'data_dna_n_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_n_yesno.png'
+plot 'data_dna_n_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
 
 
-set xlabel "Tamaño del patrón (m)" font ",18"
-set output 'data_random_m.png'
-plot 'data_random_m' u 2:4 w lp t 'SuffixArray' ls 1, '' u 2:5 w lp t 'BruteForce' ls 2
-
+set output 'data_rand_n_no.png'
+plot 'data_rand_n_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_n_yes.png'
+plot 'data_rand_n_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_n_yesno.png'
+plot 'data_rand_n_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
 
 
 
 set xtics ("1x10^5" 1000000, "2x10^5" 2000000, "3x10^5" 3000000, "4x10^5" 4000000, "5x10^5" 5000000, "6x10^5" 6000000, "7x10^5" 7000000, "8x10^5" 8000000, "9x10^5" 9000000, "10x10^5" 10000000)
 set xrange [500000:10500000]
-
 set xlabel "Tamaño del texto (n)" font ",18"
-set output 'data_dna_n.png'
-plot 'data_dna_n' u 1:4 w lp t 'SuffixArray' ls 1, '' u 1:5 w lp t 'BruteForce' ls 2
+
+set output 'data_dna_n_no.png'
+plot 'data_dna_n_no' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_n_yes.png'
+plot 'data_dna_n_yes' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_n_yesno.png'
+plot 'data_dna_n_yesno' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
 
 
-set xlabel "Tamaño del texto (n)" font ",18"
-set output 'data_random_n.png'
-plot 'data_random_n' u 1:4 w lp t 'SuffixArray' ls 1, '' u 1:5 w lp t 'BruteForce' ls 2
-
-
+set output 'data_rand_n_no.png'
+plot 'data_rand_n_no' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_n_yes.png'
+plot 'data_rand_n_yes' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_n_yesno.png'
+plot 'data_rand_n_yesno' u 1:3 w lp t 'FuerzaBruta' ls 1, '' u 1:4 w lp t 'BooyerMoore' ls 2, '' u 1:6 w lp t 'RabinKarp' ls 3
