@@ -6,10 +6,7 @@ set key out horiz
 set logscale y
 
 set format y "10^%T";
-set xtics ("1x10^5" 100000, "2x10^5" 200000, "3x10^5" 300000, "4x10^5" 400000, "5x10^5" 500000, "6x10^5" 600000, "7x10^5" 700000, "8x10^5" 800000, "9x10^5" 900000, "10x10^5" 1000000)
-set xrange [50000:1050000]
-set yrange [0.1:1000]
-set xlabel "Tamaño del conjunto" font ",18"
+set yrange [1:1000000]
 set ylabel "Tiempo (log) [us]" font ",18"
 
 set key font ",16"
@@ -17,16 +14,35 @@ set tics font ",12"
 
 set style line 1 linecolor rgb "blue" dashtype 8 linewidth 1.5 pointtype 5 pointsize 1.5
 set style line 2 linecolor rgb "red" dashtype 8 linewidth 1.5 pointtype 5 pointsize 1.5
-set style line 3 linecolor rgb "dark-chartreuse" dashtype 8 linewidth 1.5 pointtype 5 pointsize 1.5
+set style line 1 linecolor rgb "blue" dashtype 8 linewidth 1.5 pointtype 6 pointsize 1.5
 
-set output 'grafica_aleatorio.png'
-plot 'data_aleatorio' u 1:2 w lp t 'linear' ls 1, '' u 1:3 w lp t 'binary' ls 2, '' u 1:4 w lp t 'doubling' ls 3
 
-set output 'grafica_inicio.png'
-plot 'data_inicio' u 1:2 w lp t 'linear' ls 1, '' u 1:3 w lp t 'binary' ls 2, '' u 1:4 w lp t 'doubling' ls 3
 
-set output 'grafica_medio.png'
-plot 'data_medio' u 1:2 w lp t 'linear' ls 1, '' u 1:3 w lp t 'binary' ls 2, '' u 1:4 w lp t 'doubling' ls 3
+set xtics 100
+set xrange [50:1050]
 
-set output 'grafica_fin.png'
-plot 'data_fin' u 1:2 w lp t 'linear' ls 1, '' u 1:3 w lp t 'binary' ls 2, '' u 1:4 w lp t 'doubling' ls 3
+set xlabel "Tamaño del patrón (m)" font ",18"
+set output 'data_dna_m.png'
+plot 'data_dna_m' u 2:4 w lp t 'SuffixArray' ls 1, '' u 2:5 w lp t 'BruteForce' ls 2
+
+
+set xlabel "Tamaño del patrón (m)" font ",18"
+set output 'data_random_m.png'
+plot 'data_random_m' u 2:4 w lp t 'SuffixArray' ls 1, '' u 2:5 w lp t 'BruteForce' ls 2
+
+
+
+
+set xtics ("1x10^5" 1000000, "2x10^5" 2000000, "3x10^5" 3000000, "4x10^5" 4000000, "5x10^5" 5000000, "6x10^5" 6000000, "7x10^5" 7000000, "8x10^5" 8000000, "9x10^5" 9000000, "10x10^5" 10000000)
+set xrange [500000:10500000]
+
+set xlabel "Tamaño del texto (n)" font ",18"
+set output 'data_dna_n.png'
+plot 'data_dna_n' u 1:4 w lp t 'SuffixArray' ls 1, '' u 1:5 w lp t 'BruteForce' ls 2
+
+
+set xlabel "Tamaño del texto (n)" font ",18"
+set output 'data_random_n.png'
+plot 'data_random_n' u 1:4 w lp t 'SuffixArray' ls 1, '' u 1:5 w lp t 'BruteForce' ls 2
+
+

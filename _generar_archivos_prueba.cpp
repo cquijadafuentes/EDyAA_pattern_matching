@@ -70,14 +70,14 @@ int main(int argc, char *argv[]){
 	for(int i=1; i <= cant_files; i++){
 		int size_text = i*bloque_text;
 		//  Generando archivos de texto
-		ofstream out_t(pref_output+"_tx_"+to_string(size_text)+".txt");
+		ofstream out_t(pref_output+"tx_"+to_string(size_text)+".txt");
 		out_t << texto.substr(0, size_text) << endl;
 		out_t.close();
 		//	Generando archivos de patrones
 		int size_patt = i*bloque_patt;
-		ofstream out_py(pref_output+"_pt_yes_"+to_string(size_patt)+".txt");		
-		ofstream out_pn(pref_output+"_pt_no_"+to_string(size_patt)+".txt");
-		ofstream out_pyn(pref_output+"_pt_yn_"+to_string(size_patt)+".txt");
+		ofstream out_py(pref_output+"pt_yes_"+to_string(size_patt)+".txt");		
+		ofstream out_pn(pref_output+"pt_no_"+to_string(size_patt)+".txt");
+		ofstream out_pyn(pref_output+"pt_yn_"+to_string(size_patt)+".txt");
 
 		for(int j=0; j<cant_patt; j++){
 			string ptyes = texto.substr((rand() % (bloque_text - 1 - size_patt)), size_patt);

@@ -7,6 +7,9 @@
 #include <fstream>
 #include "text_search.h"
 
+// La salida es:
+// tamaño_texto tamaño_patron t_fuerzabruta t_boyermoore t_rabinkarp
+
 const int bruteforce = 1;
 const int metodo1 = 2;
 const int metodo2 = 3;

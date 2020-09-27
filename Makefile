@@ -22,7 +22,7 @@ _generar_archivos_prueba:
 	$(CXX) $(CXXFLAGS) _generar_archivos_prueba.cpp -o _generar_archivos_prueba 
 
 _textoaleatorio:
-	$(CXX) $(CXXFLAGS) _textoaleatorio.cpp -o _textoaleatorio 
+	$(CXX) $(CXXFLAGS) _textoaleatorio.c -o _textoaleatorio 
 
 clean :
 	rm -f $(OBJECTS) $(BINS)

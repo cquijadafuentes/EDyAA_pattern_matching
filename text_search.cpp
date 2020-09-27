@@ -6,7 +6,7 @@ using namespace std;
 
 bool bruteforce_verificador(string &t, string &p, int x){
 	// Retorna falso si el patrón p no está en t desde la posicón x
-	for(int i = 0; i < p.length(); i++){
+	for(int i = 0; i < (int) p.length(); i++){
 		if(t[x+i] != p[i])	return false;
 	}
 	return true;
@@ -16,6 +16,10 @@ int* text_search_bruteforce(string &t, string &p){
 	// Mayor cantidad de coincidencias posibles según el tamaño de los strings
 	int max_coin = t.length() - p.length() + 1;
 	// Se reserva la cantidad de elementos + el contador que va a inicio.SEguroa
+	if(t.length() < p.length()){
+		printf("Error! el tamaño del texto es menor que el tamaño del patrón\n");
+		return NULL;
+	}
 	int* c = (int *) malloc(sizeof(int) * (max_coin + 1));
 	c[0] = 0;
 	for(int i = 0; i< max_coin; i++){
@@ -42,17 +46,17 @@ int* text_search_metodo1(string &t, string &p){
 	
 	/* Procesamiento funcion de ultima ocurrencia */
 	map<char, int> lastOcurrence;
-	for(int i = 0; i < t.length(); i++){
+	for(int i = 0; i < (int) t.length(); i++){
 		lastOcurrence[t[i]] = -1;
 	}
-	for(int i = 0; i < p.length(); i++){
+	for(int i = 0; i < (int) p.length(); i++){
 		lastOcurrence[p[i]] = i;
 	}
 	
 	int i = p.length() - 1;
 	int j = p.length() - 1;
 	/* Revisión del patrón en el texto */
-	while(i < t.length()){
+	while(i < (int) t.length()){
 		/* El patron coincide con la revisión actual */
 		if(t[i] == p[j]){
 			/* El patrón coincide completamente. Hay un matching */
