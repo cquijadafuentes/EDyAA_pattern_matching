@@ -1,5 +1,12 @@
 #include <string>
 
+
+#define SIGMA 100
+#define FIRSTCHAR 32
+// Sigma corresponde al tamaño del alfabeto
+// Se considera el alfabeto desde el 32 al 131
+// Donde 32 corresponde al espacio.
+
 // Todas las búsquedas retornarán un arreglo de enteros
 // El primer elemento del arreglo indica la cantidad de
 // coincidencias del patrón p en el texto t
