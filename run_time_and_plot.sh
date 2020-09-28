@@ -46,9 +46,9 @@ RAND_DATA_YES=${DATA}"rand_m_yes"
 RAND_DATA_NO=${DATA}"rand_m_no"
 RAND_DATA_YESNO=${DATA}"rand_m_yesno"
 
-DNA_DATA_YES=${DATA}"data_m_yes"
-DNA_DATA_NO=${DATA}"data_m_no"
-DNA_DATA_YESNO=${DATA}"data_m_yesno"
+DNA_DATA_YES=${DATA}"dna_m_yes"
+DNA_DATA_NO=${DATA}"dna_m_no"
+DNA_DATA_YESNO=${DATA}"dna_m_yesno"
 
 echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_YES}
 echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_NO}
