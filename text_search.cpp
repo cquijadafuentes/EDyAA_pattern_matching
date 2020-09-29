@@ -89,18 +89,19 @@ int* text_search_metodo1(string &t, string &p){
 int* text_search_metodo2(string &t, string &p){
 	int n = t.length();
 	int m = p.length();
-	int q = 101;	// Número primo 
-	int d = 256;	// Tamaño del alfabeto ASCII
+	int q = 41;	// Número primo 
+	int d = SIGMA;	// Tamaño del alfabeto
+	char fc = FIRSTCHAR + 1;
 	int h = 1;
 	for(int i=1; i<m; i++){
 		h = (h*d) % q;
 	}
 
-	int ph = p.at(0);
-	int th = t.at(0);
+	int ph = p.at(0) - fc;
+	int th = t.at(0) - fc;
 	for(int i = 1; i < m; i++){
-		ph = (d*ph + p.at(i))%q;
-		th = (d*th + t.at(i))%q;
+		ph = (d*ph + p.at(i) - fc)%q;
+		th = (d*th + t.at(i) - fc)%q;
 	}
 	int* c = (int *) malloc(sizeof(int)*(n-m-1));
 	if(c == NULL){
@@ -128,7 +129,7 @@ int* text_search_metodo2(string &t, string &p){
 			// ventana anterior, el resultado se multiplica 
 			// por 10 y se suma elemento de menor orden de
 			// la ventana actual.
-			th = (d*((th - t.at(i)*h)%q) + t.at(i+m)) % q;
+			th = (d*((th - (t.at(i) - fc)*h)%q) + (t.at(i+m) - fc)) % q;
 			// En caso que la resta de valores negativos
 			if(th < 0){
 				th += q;
