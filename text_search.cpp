@@ -45,12 +45,10 @@ int* text_search_metodo1(string &t, string &p){
 	c[0] = 0;
 	
 	/* Procesamiento funcion de ultima ocurrencia */
-	map<char, int> lastOcurrence;
-	for(int i = 0; i < (int) t.length(); i++){
-		lastOcurrence[t[i]] = -1;
-	}
+	int lastOcurrence[SIGMA];
+	
 	for(int i = 0; i < (int) p.length(); i++){
-		lastOcurrence[p[i]] = i;
+		lastOcurrence[p[i]-FIRSTCHAR] = i;
 	}
 	
 	int i = p.length() - 1;
@@ -72,7 +70,7 @@ int* text_search_metodo1(string &t, string &p){
 			}
 		/* El patrón no coincide. Se debe realizar el salto del patrón. */
 		}else{
-			i = i + p.length() - min(j, 1 + lastOcurrence[t[i]]);
+			i = i + p.length() - min(j, 1 + lastOcurrence[t[i]-FIRSTCHAR]);
 			j = p.length() - 1;
 		}
 	}
