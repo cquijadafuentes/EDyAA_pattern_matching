@@ -22,20 +22,20 @@ set xtics 100
 set xrange [50:1050]
 set xlabel "Tamaño del patrón (m)" font ",18"
 
-set output 'data_dna_n_no.png'
-plot 'data_dna_n_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
-set output 'data_dna_n_yes.png'
-plot 'data_dna_n_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
-set output 'data_dna_n_yesno.png'
-plot 'data_dna_n_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_m_no.png'
+plot 'data_dna_m_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_m_yes.png'
+plot 'data_dna_m_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_dna_m_yesno.png'
+plot 'data_dna_m_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
 
 
-set output 'data_rand_n_no.png'
-plot 'data_rand_n_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
-set output 'data_rand_n_yes.png'
-plot 'data_rand_n_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
-set output 'data_rand_n_yesno.png'
-plot 'data_rand_n_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_m_no.png'
+plot 'data_rand_m_no' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_m_yes.png'
+plot 'data_rand_m_yes' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
+set output 'data_rand_m_yesno.png'
+plot 'data_rand_m_yesno' u 2:3 w lp t 'FuerzaBruta' ls 1, '' u 2:4 w lp t 'BooyerMoore' ls 2, '' u 2:6 w lp t 'RabinKarp' ls 3
 
 
 
