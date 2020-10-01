@@ -68,6 +68,8 @@ for i in 100 200 300 400 500 600 700 800 900 1000; do
 	${SEARCHTIME} ${PREF_DNA}"tx_10000000.txt" ${PREF_DNA}"pt_yn_"${i}".txt" >> ${DNA_DATA_YESNO}
 done
 
+./run_time_and_plot_eng.sh
+
 gnuplot < plot
 
 rm ${PREF_RAND}* ${PREF_DNA}* ${FILE_RAND}*

@@ -52,6 +52,7 @@ int main(int argc, char *argv[]){
 		printf("Error! en la lectura del archivo <text_file>\n");
 		return -1;
 	}
+	printf("Filename: %s\n", argv[1]);
 	printf("Tamaño del texto: %d\n", (int)texto.length());
 	if((int)texto.length() < max_text){
 		printf("Error! <text_file> no cotinene el largo para <max_text>\n");
@@ -64,6 +65,7 @@ int main(int argc, char *argv[]){
 
 	if(max_patt > bloque_text){
 		printf("Error! max_patt debe ser menor a <max_text>/<cant_files> (%d)\n", bloque_text);
+		return -1;
 	}
 
 	// Generando archivos de salida
@@ -73,6 +75,7 @@ int main(int argc, char *argv[]){
 		ofstream out_t(pref_output+"tx_"+to_string(size_text)+".txt");
 		out_t << texto.substr(0, size_text) << endl;
 		out_t.close();
+		
 		//	Generando archivos de patrones
 		int size_patt = i*bloque_patt;
 		ofstream out_py(pref_output+"pt_yes_"+to_string(size_patt)+".txt");		
