@@ -9,6 +9,7 @@ FILE_RAND="random_text"
 PREF_DNA="dnatxt_"
 FILE_DNA="_dna_text"
 
+make
 ./_textoaleatorio 10000000 > ${FILE_RAND}
 
 ./_generar_archivos_prueba ${FILE_RAND} ${PREF_RAND} 10 10000000 1000 30 L
@@ -73,3 +74,4 @@ done
 gnuplot < plot
 
 rm ${PREF_RAND}* ${PREF_DNA}* ${FILE_RAND}*
+make clean
