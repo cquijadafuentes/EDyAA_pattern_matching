@@ -5,7 +5,7 @@ echo $FECHA
 SEARCHTIME="./text_search_time"
 DATA="data_eng"
 FILETEXTO="_english_text"
-PREFIJO="eng_text".
+PREFIJO="eng_text"
 
 make
 ./_generar_archivos_prueba ${FILETEXTO} ${PREFIJO} 10 10000000 0 0 L
@@ -17,3 +17,4 @@ done
 
 rm ${PREFIJO}*
 make clean
+
