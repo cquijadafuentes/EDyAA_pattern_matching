@@ -23,13 +23,13 @@ DNA_DATA_YES=${DATA}"dna_n_yes"
 DNA_DATA_NO=${DATA}"dna_n_no"
 DNA_DATA_YESNO=${DATA}"dna_n_yesno"
 
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_YES}
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_NO}
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_YESNO}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_YES}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_NO}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_YESNO}
 
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_YES}
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_NO}
-echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_YESNO}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_YES}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_NO}
+echo '%n(text) n(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_YESNO}
 
 for i in 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000 10000000; do
 	${SEARCHTIME} ${PREF_RAND}"tx_"${i}".txt" ${PREF_RAND}"pt_yes_1000.txt" >> ${RAND_DATA_YES}
@@ -51,13 +51,13 @@ DNA_DATA_YES=${DATA}"dna_m_yes"
 DNA_DATA_NO=${DATA}"dna_m_no"
 DNA_DATA_YESNO=${DATA}"dna_m_yesno"
 
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_YES}
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_NO}
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${RAND_DATA_YESNO}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_YES}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_NO}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${RAND_DATA_YESNO}
 
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_YES}
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_NO}
-echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp' > ${DNA_DATA_YESNO}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_YES}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_NO}
+echo '%n(text) m(patron) t_fuerzabruta t_boyermoore t_rabinkarp colisionesRK' > ${DNA_DATA_YESNO}
 
 for i in 100 200 300 400 500 600 700 800 900 1000; do
 	${SEARCHTIME} ${PREF_RAND}"tx_10000000.txt" ${PREF_RAND}"pt_yes_"${i}".txt" >> ${RAND_DATA_YES}
@@ -73,5 +73,5 @@ done
 
 gnuplot < plot
 
-rm ${PREF_RAND}* ${PREF_DNA}* ${FILE_RAND}*
+#rm ${PREF_RAND}* ${PREF_DNA}* ${FILE_RAND}*
 make clean

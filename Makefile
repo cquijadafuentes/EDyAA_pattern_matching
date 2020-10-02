@@ -5,7 +5,7 @@ CXXFLAGS=-Wall -g -O2
 OBJECTS=text_search.o 
 
 BINS=text_search_prueba text_search_time text_search_muestra_rabin_karp\
-		_generar_archivos_prueba _textoaleatorio
+		text_search_rk_time_colissions _generar_archivos_prueba _textoaleatorio 
 
 all: clean $(OBJECTS) $(BINS)
 
@@ -17,6 +17,9 @@ text_search_time:
 
 text_search_muestra_rabin_karp:
 	$(CXX) $(CXXFLAGS) text_search_muestra_rabin_karp.cpp $(OBJECTS) -o text_search_muestra_rabin_karp 
+
+text_search_rk_time_colissions:
+	$(CXX) $(CXXFLAGS) text_search_rk_time_colissions.cpp $(OBJECTS) -o text_search_rk_time_colissions 
 
 _generar_archivos_prueba:
 	$(CXX) $(CXXFLAGS) _generar_archivos_prueba.cpp -o _generar_archivos_prueba 

@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 bool bruteforce_verificador(string &t, string &p, int x){
 	// Retorna falso si el patrón p no está en t desde la posicón x
 	for(int i = 0; i < (int) p.length(); i++){
@@ -87,14 +88,14 @@ int* text_search_metodo1(string &t, string &p){
 int* text_search_metodo2(string &t, string &p){
 	int n = t.length();
 	int m = p.length();
-	int q = 41;	// Número primo 
+	int q = 199;	// Número primo 
 	int d = SIGMA;	// Tamaño del alfabeto
 	char fc = FIRSTCHAR + 1;
 	int h = 1;
 	for(int i=1; i<m; i++){
 		h = (h*d) % q;
 	}
-
+	int colisiones = 0;
 	int ph = p.at(0) - fc;
 	int th = t.at(0) - fc;
 	for(int i = 1; i < m; i++){
@@ -111,6 +112,7 @@ int* text_search_metodo2(string &t, string &p){
 	for(int i = 0; i <= n-m; i++){
 		// El hash del patrón y de la ventana son iguales
 		if(ph == th){
+			colisiones++;
 			aux = 0;
 			// Comprobar si la ventana contiene lo mismo
 			// que el patrón (por posibles colisiones del hash)
@@ -134,7 +136,12 @@ int* text_search_metodo2(string &t, string &p){
 			}
 		}
 	}
-	c = (int *) realloc(c, sizeof(int) * (c[0] + 1));
+	// +2 para guardar dos enteros adicionales
+	// En la primera posición la cantidad de coincidencias
+	// al final del arreglo la cantidad de colisiones que debieron ser verificadas
+	c = (int *) realloc(c, sizeof(int) * (c[0] + 2));
+	// La cantidad de veces que se verificò un hash - cantidad de patrones reales
+	c[c[0]+1] = colisiones - c[0];
 	if(c == NULL){
 		printf("Error! en la reubicación de memoria del resultado.\n");
 		return NULL;

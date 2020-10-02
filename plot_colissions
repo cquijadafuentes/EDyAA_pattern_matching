@@ -1,0 +1,29 @@
+reset
+
+set terminal png size 800,600
+set grid
+set key out horiz
+
+set logscale x
+set logscale y
+set format y "10^%T";
+set xrange [40:4000000]
+set yrange [1:1000000]
+set xlabel "Valor q" font ",18"
+
+set key font ",16"
+set tics font ",12"
+
+set style line 1 linecolor rgb "blue" dashtype 8 linewidth 1.5 pointtype 3 pointsize 1.5
+set style line 2 linecolor rgb "red" dashtype 8 linewidth 1.5 pointtype 4 pointsize 1.5
+set style line 3 linecolor rgb "purple" dashtype 8 linewidth 1.5 pointtype 4 pointsize 1.5
+
+
+set ylabel "Cantidad Falsos Positivos" font ",18"
+set output 'data_collissions_fp.png'
+plot 'data_collission_dna' u 3:5:xtic(3) w lp t 'dna' ls 1, 'data_collission_rand' u 3:5 w lp t 'rand' ls 2, 'data_collission_eng' u 3:5 w lp t 'eng' ls 3
+
+
+set ylabel "Tiempo de Consulta [ms]" font ",18"
+set output 'data_collissions_time.png'
+plot 'data_collission_dna' u 3:4:xtic(3) w lp t 'dna' ls 1, 'data_collission_rand' u 3:4 w lp t 'rand' ls 2, 'data_collission_eng' u 3:4 w lp t 'eng' ls 3

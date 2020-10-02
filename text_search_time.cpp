@@ -8,27 +8,34 @@
 #include "text_search.h"
 
 // La salida es:
-// tamaño_texto tamaño_patron t_fuerzabruta t_boyermoore t_rabinkarp
+// tamaño_texto tamaño_patron t_fuerzabruta t_boyermoore t_rabinkarp cant_colisionesRK
 
 const int bruteforce = 1;
 const int metodo1 = 2;
 const int metodo2 = 3;
 
+double colisionesRK = 0.0;
+
 using namespace std;
 
 double tiempos_busquedas(int b, string t, string p){
 	// Mide el tiempo en segundos que tarda la función de búsqueda
+	int * res;
 	if(b == bruteforce){
 		clock_t start = clock();
-		text_search_bruteforce(t,p);
+		res = text_search_bruteforce(t,p);
+		free(res);
 		return (double)(clock() - start) / CLOCKS_PER_SEC;
 	}else if(b == metodo1){		
 		clock_t start = clock();
-		text_search_metodo1(t,p);
+		res = text_search_metodo1(t,p);
+		free(res);
 		return (double)(clock() - start) / CLOCKS_PER_SEC;
 	}else if(b == metodo2){
 		clock_t start = clock();
-		text_search_metodo2(t,p);
+		res = text_search_metodo2(t,p);
+		colisionesRK += res[res[0]+1];
+		free(res);
 		return (double)(clock() - start) / CLOCKS_PER_SEC;
 	}
 	return 0.0;
@@ -41,7 +48,6 @@ int main(int argc, char *argv[]){
 		printf("Donde:\n");
 		printf("text_file contiene el texto.\n");
 		printf("patterns_file contiene los patrones a buscar.\n");
-		printf("\tLa primera linea es un entero con la cantidad de patrones.\n");
 		return -1;
 	}
 	ifstream file1(argv[1]);
@@ -66,7 +72,7 @@ int main(int argc, char *argv[]){
 	t_bruteforce *= 1000000/cPatrones;
 	t_metodo1 *= 1000000/cPatrones;
 	t_metodo2 *= 1000000/cPatrones;
-	
-	printf("%ld\t%d\t%.2f\t%.2f\t%.2f\n", texto.length(), largoPatrones, t_bruteforce, t_metodo1, t_metodo2);
+	colisionesRK = colisionesRK / cPatrones;
+	printf("%ld\t%d\t%.2f\t%.2f\t%.2f\t%.2f\n", texto.length(), largoPatrones, t_bruteforce, t_metodo1, t_metodo2, colisionesRK);
 	return 0;
 }
